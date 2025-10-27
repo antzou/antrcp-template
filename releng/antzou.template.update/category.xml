@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature type="features/antzou.template.feature_1.0.0.qualifier.jar" url="features/antzou.template_1.0.0.qualifier.jar" id="antzou.template" version="1.0.0.qualifier">
+      <category name="antzou.template.update"/>
+   </feature>
+   <category-def name="antzou.template.update" label="antzou template update"/>
+</site>

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Automatic-Module-Name: antzou.template.tests
+Bundle-Name: RCP Integration Tests
+Bundle-SymbolicName: antzou.template.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: AntZou
+Fragment-Host: antzou.template.application;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Require-Bundle: org.junit;bundle-version="4.12.0",
+ org.eclipse.swtbot.junit4_x;bundle-version="2.3.0",
+ org.eclipse.swtbot.swt.finder;bundle-version="2.3.0"

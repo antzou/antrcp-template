@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ant Rcp Application
+Bundle-SymbolicName: antzou.template.application;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: AntZou
+Require-Bundle: org.eclipse.swt,
+ org.eclipse.e4.ui.model.workbench,
+ org.eclipse.jface,
+ org.eclipse.e4.ui.services,
+ org.eclipse.e4.ui.workbench,
+ org.eclipse.e4.core.di,
+ org.eclipse.e4.ui.di,
+ org.eclipse.e4.core.contexts,
+ org.eclipse.core.runtime,
+ org.eclipse.e4.ui.workbench.swt;bundle-version="0.17.600",
+ org.eclipse.ui.workbench;bundle-version="3.134.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Import-Package: jakarta.annotation;version="[2.1.0,3.0.0)",
+ jakarta.inject;version="[2.0.0,3.0.0)"
+Automatic-Module-Name: antzou.template.application
