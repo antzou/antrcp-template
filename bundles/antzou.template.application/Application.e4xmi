@@ -11,7 +11,7 @@
 	<children xsi:type="basic:TrimmedWindow"
 		xmi:id="main_window"
 		elementId="antzou.template.application.window.main"
-		label="antrcp-Template" >
+		label="antrcp-Template">
 		<!-- 可分割的布局容器 -->
 		<children xsi:type="basic:PartSashContainer"
 			xmi:id="main_sash_container"
