@@ -1,0 +1,206 @@
+/*******************************************************************************
+ * Copyright (c) 2024 [Your Name] and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *     [Your Name] <your.email@example.com> - initial API and implementation
+ *******************************************************************************/
+
+ThemesExtension { color-definition:
+    '#org-eclipse-ui-workbench-GREEN_BACKGROUND',
+    '#org-eclipse-ui-workbench-GREEN_FOREGROUND',
+    '#org-eclipse-ui-workbench-INACTIVE_UNSELECTED_TABS_COLOR_START',
+    '#org-eclipse-ui-workbench-INACTIVE_UNSELECTED_TABS_COLOR_END',
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_BG_START',
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_BG_END',
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_OUTER_KEYLINE_COLOR',
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_INNER_KEYLINE_COLOR',
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_OUTLINE_COLOR',
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_TEXT_COLOR',
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_UNSELECTED_TEXT_COLOR',
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_SELECTED_TEXT_COLOR',
+    '#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_START',
+    '#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_END',
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_BG_START',
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END',
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_OUTER_KEYLINE_COLOR',
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_INNER_KEYLINE_COLOR',
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_OUTLINE_COLOR',
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR',
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR',
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_SELECTED_TEXT_COLOR',
+    '#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_START',
+    '#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_END',
+    '#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_TEXT_COLOR',
+    '#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR',
+    '#org-eclipse-ui-workbench-LINK_COLOR';
+}
+
+ColorDefinition#org-eclipse-ui-workbench-GREEN_BACKGROUND {
+    color: #F0FFF0;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=GREEN_BACKGROUND');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-GREEN_FOREGROUND {
+    color: #008000;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=GREEN_FOREGROUND');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_UNSELECTED_TABS_COLOR_START {
+    color: #E5F6E5;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_UNSELECTED_TABS_COLOR_START');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_UNSELECTED_TABS_COLOR_END {
+    color: #D6EBD6;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_UNSELECTED_TABS_COLOR_END');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_BG_START {
+    color: #E5F6E5;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_BG_START');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_BG_END {
+    color: #D6EBD6;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_BG_END');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTER_KEYLINE_COLOR {
+    color: #E5F6E5;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_OUTER_KEYLINE_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_INNER_KEYLINE_COLOR {
+    color: #E5F6E5;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_INNER_KEYLINE_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTLINE_COLOR {
+    color: #E5F6E5;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_OUTLINE_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_TEXT_COLOR {
+    color: #008000;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_TEXT_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_UNSELECTED_TEXT_COLOR {
+    color: #008000;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_UNSELECTED_TEXT_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_SELECTED_TEXT_COLOR {
+    color: #006400;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_SELECTED_TEXT_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_START {
+    color: #D6EBD6;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_UNSELECTED_TABS_COLOR_START');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_END {
+    color: #90EE90;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_UNSELECTED_TABS_COLOR_END');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_BG_START {
+    color: #90EE90;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_BG_START');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END {
+    /** edit/view title color: #008000; */
+    color: #90EE90;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_BG_END');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTER_KEYLINE_COLOR {
+    color: #90EE90;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_OUTER_KEYLINE_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_INNER_KEYLINE_COLOR {
+    color: #90EE90;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_INNER_KEYLINE_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTLINE_COLOR {
+    color: #90EE90;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_OUTLINE_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR {
+    color: #FFFFFF;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_TEXT_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR {
+    color: #FFFFFF;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_UNSELECTED_TEXT_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_SELECTED_TEXT_COLOR {
+    color: #FFFFFF;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_SELECTED_TEXT_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_START {
+    color: #90EE90;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_NOFOCUS_TAB_BG_START');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_END {
+    color: #008000;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_NOFOCUS_TAB_BG_END');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_TEXT_COLOR {
+    color: #FFFFFF;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_NOFOCUS_TAB_TEXT_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR {
+    color: #FFFFFF;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR');
+}
+
+ColorDefinition#org-eclipse-ui-workbench-LINK_COLOR {
+    color: #006400;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=LINK_COLOR');
+}

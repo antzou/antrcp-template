@@ -11,7 +11,8 @@
 	<children xsi:type="basic:TrimmedWindow"
 		xmi:id="main_window"
 		elementId="antzou.template.application.window.main"
-		label="antrcp-Template">
+		label="antrcp-Template"
+		iconURI="platform:/plugin/antzou.template.application/icons/app32.png">
 		<!-- 可分割的布局容器 -->
 		<children xsi:type="basic:PartSashContainer"
 			xmi:id="main_sash_container"
@@ -115,12 +116,6 @@
 			            label="Toggle Full Screen"
 			            command="cmd_toggle_fullscreen"/>
 			    </children>
-			    <!-- 添加首选项菜单项 -->
-			    <children xsi:type="menu:HandledMenuItem"
-			        xmi:id="preferences_menu_item"
-			        elementId="com.antzou.application.preferences"
-			        label="Preferences"
-			        command="cmd_preferences"/>
 			</children>
 			<children xsi:type="menu:Menu"
 			    xmi:id="help_menu" elementId="help" label="Help">
@@ -156,10 +151,19 @@
 		    elementId="antzou.template.application.statusbar"
 		    side="Bottom">
 		    
+		    <!-- 使用自定义填充控件 -->
 		    <children xsi:type="menu:ToolControl"
-		        xmi:id="memory_status_control"
-		        elementId="com.antzou.application.statusbar.memory"
-		        contributionURI="bundleclass://antzou.template.application/com.antzou.application.controls.MemoryStatusControl"
+		        xmi:id="statusbar_filler"
+		        elementId="com.antzou.application.statusbar.filler"
+		        contributionURI="bundleclass://antzou.template.application/com.antzou.application.controls.StatusBarFiller"
+		        visible="true">
+		    </children>
+		    
+		    <!-- 时间显示控件 -->
+		    <children xsi:type="menu:ToolControl"
+		        xmi:id="time_status_control"
+		        elementId="com.antzou.application.statusbar.time"
+		        contributionURI="bundleclass://antzou.template.application/com.antzou.application.controls.TimeStatusControl"
 		        visible="true">
 		    </children>
 		    
@@ -170,12 +174,6 @@
 	<commands xmi:id="cmd_preferences"
 	    elementId="org.eclipse.ui.window.preferences"
 	    commandName="Preferences"/>
-	
-	<!-- 在处理器部分添加 -->
-	<handlers xmi:id="handler_preferences"
-	    elementId="com.antzou.application.preferences.handler"
-	    contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.OpenPreferencesHandler"
-	    command="cmd_preferences"/>
 	
 	<!-- 在命令部分 -->
 	<commands xmi:id="cmd_about"

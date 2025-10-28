@@ -1,0 +1,157 @@
+/*******************************************************************************
+ * Copyright (c) 2024 [Your Name] and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *     [Your Name] <your.email@example.com> - initial API and implementation
+ *******************************************************************************/
+
+@import url("platform:/plugin/antzou.template.application/css/common/e4_globalstyle.css");
+@import url("platform:/plugin/antzou.template.application/css/green/e4_green_ide_colorextensions.css");
+@import url("platform:/plugin/antzou.template.application/css/green/e4_green_globalstyle.css"); 
+@import url("platform:/plugin/antzou.template.application/css/green/e4_green_partstyle.css");
+@import url("platform:/plugin/antzou.template.application/css/green/e4_green_tabstyle.css");
+@import url("platform:/plugin/antzou.template.application/css/green/e4_green_drag_styling.css");
+
+/* 修复后的CTabItem样式（简化属性，避免无效语法） */
+CTabItem {
+    color: #006400;           /* 深绿色文字（非活动状态） */
+    font-weight: bold;
+}
+
+CTabItem:selected {
+    color: #004000 !important; /* 活动状态文字（深色绿色） */
+    font-weight: bold;
+    background-color: #D6EBD6; /* 活动Tab背景 */
+}
+
+CTabFolder Canvas {
+    background-color: #E5F6E5;
+    color: #008000;
+}
+
+.MPartStack.active CTabFolder Canvas {
+    background-color: #D6EBD6;
+    color: #008000;
+}
+
+.MPartStack.active Table {
+    background-color: #E5F6E5;
+    color: #008000;
+}
+
+Tree, Table {
+    swt-lines-visible: false;
+}
+
+/* ##################### Bottom Status Bar ####################### */
+
+StatusLine,
+ImageBasedFrame,
+#org-eclipse-ui-StatusLine,
+#org-eclipse-ui-StatusLine CLabel,
+#org-eclipse-ui-ProgressBar,
+#org-eclipse-ui-ProgressBar Canvas {
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+}
+
+/* ####################### CSS for .MParts ####################### */
+
+.MPart Form Section,
+.MPart Form Label,
+.MPart Form FormText,
+.MPartStack .MPart Form MasterDetailsBlock-MDSashForm,
+.MPartStack .MPart Form SashForm,
+.MPartStack .MPart Form Sash,
+.MPart Form Button[style~='SWT.CHECK'],
+.MPart Form Button[style~='SWT.RADIO'],
+.MPartStack.active .MPart Form Section,
+.MPartStack.active .MPart Form Label,
+.MPartStack.active .MPart Form FormText,
+.MPartStack.active .MPart Form MasterDetailsBlock-MDSashForm,
+.MPartStack.active .MPart Form SashForm,
+.MPartStack.active .MPart Form Sash,
+.MPartStack.active .MPart Form Button[style~='SWT.CHECK'],
+.MPartStack.active .MPart Form Button[style~='SWT.RADIO']
+{
+    background-color: inherit;
+    color: #008000;
+}
+
+.MPart Form,
+.MPart Form Link,
+.MPart Form Button,
+.MPart Form Group,
+.MPart Form ScrolledPageBook,
+.MPart Form DependenciesComposite,
+.MPart Form ListEditorComposite,
+.MPart Form Text[style~='SWT.READ_ONLY'],
+.MPart Form DependenciesComposite > SashForm > Section > *, 
+.MPartStack.active .MPart Form,
+.MPartStack.active .MPart Form Link,
+.MPartStack.active .MPart Form Button,
+.MPartStack.active .MPart Form Group,
+.MPartStack.active .MPart Form ScrolledPageBook,
+.MPartStack.active .MPart Form DependenciesComposite,
+.MPartStack.active .MPart Form ListEditorComposite,
+.MPartStack.active .MPart Form Text[style~='SWT.READ_ONLY'],
+.MPartStack.active .MPart Form DependenciesComposite > SashForm > Section > * { 
+    background-color: #E5F6E5;
+    color: #008000;
+}
+
+#org-eclipse-help-ui-HelpView Form,
+#org-eclipse-help-ui-HelpView Form Sash,
+#org-eclipse-help-ui-HelpView Form Label,
+#org-eclipse-help-ui-HelpView Form Section,
+#org-eclipse-help-ui-HelpView Form FormText,
+#org-eclipse-help-ui-HelpView Form Button,
+#org-eclipse-help-ui-HelpView Form Group,
+#org-eclipse-help-ui-HelpView Form ScrolledPageBook,
+#org-eclipse-help-ui-HelpView Form Text[style~='SWT.READ_ONLY'] {
+    background-color: #F0FFF0;
+    color: #008000;
+}
+
+.MPartStack.active #org-eclipse-help-ui-HelpView Form,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Sash,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Label,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Section,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form FormText,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Button,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Group,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form ScrolledPageBook,
+.MPartStack.active #org-eclipse-help-ui-HelpView Form Text[style~='SWT.READ_ONLY'] {
+    background-color: #D6EBD6;
+    color: #008000;
+}
+
+.MPart Form Section Tree,
+.MPartStack.active .MPart Form Section Tree {
+    background-color: #F0FFF0;
+    color: #008000;
+}
+
+Shell {
+    background-color: #F0FFF0;
+    swt-background-mode: 'force'; /* 强制覆盖系统默认背景 */
+}
+
+.MPartStack Table {
+    /* 有焦点时的 TableItem 背景颜色 */
+    background-color: #E5F6E5;
+    color: #008000;
+}
+
+.MPartStack Table:unfocused {
+    /* 失去焦点时的 TableItem 背景颜色保持不变 */
+    background-color: #E5F6E5;
+    color: #008000;
+}
+

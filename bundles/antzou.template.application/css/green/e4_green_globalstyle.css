@@ -1,0 +1,295 @@
+/*******************************************************************************
+ * Copyright (c) 2024 [Your Name] and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *     [Your Name] <your.email@example.com> - initial API and implementation
+ *******************************************************************************/
+
+Shell,
+Composite, ScrolledComposite, ExpandableComposite, Canvas, TabFolder, CLabel, Label,
+CoolBar, Sash, Group, RefactoringLocationControl, ChangeParametersControl, Link, FilteredTree,
+ProxyEntriesComposite, NonProxyHostsComposite, DelayedFilterCheckboxTree,
+Splitter, ScrolledPageContent, ViewForm, LaunchConfigurationFilteredTree,
+ContainerSelectionGroup, BrowseCatalogItem, EncodingSettings,
+ProgressMonitorPart, DocCommentOwnerComposite, NewServerComposite,
+NewManualServerComposite, ServerTypeComposite, FigureCanvas,
+DependenciesComposite, ListEditorComposite, WrappedPageBook,
+CompareStructureViewerSwitchingPane, CompareContentViewerSwitchingPane,
+QualifiedNameComponent, RefactoringStatusViewer,
+MessageLine,
+Button,
+Composite > *,
+Composite > * > *,
+Group > StyledText {
+    background-color: '#org-eclipse-ui-workbench-GREEN_BACKGROUND'; 
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+}
+
+/* ############################## Toolbar ############################## */
+TabFolder > *,
+CTabFolder > *,
+TabFolder > Composite > *, 
+CTabFolder > Composite > *, 
+TabFolder > Composite > * > * { 
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+}
+
+ToolBar {
+    background-color: inherit;	
+}
+
+Combo,
+List,
+Text,
+Spinner,
+CCombo {
+    background-color: '#org-eclipse-ui-workbench-GREEN_BACKGROUND'; 
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+}
+
+Composite > StyledText,
+Shell [style~='SWT.DROP_DOWN'] > StyledText, 
+SashForm > StyledText {
+    background-color: '#org-eclipse-ui-workbench-GREEN_BACKGROUND'; 
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+}
+
+Text[style~='SWT.SEARCH'],
+Text[style~='SWT.SEARCH'] + Label {
+    background-color: #90EE90;
+    color: #008000;
+}
+
+Text[style~='SWT.READ_ONLY'] {
+    background-color: '#org-eclipse-ui-workbench-GREEN_BACKGROUND'; 
+    color: #008000;
+}
+
+Shell Tree, Shell Table, Shell List {
+    background-color: #F0FFF0;
+}
+
+DatePicker,
+DatePicker > Text,
+ScheduleDatePicker,
+ScheduleDatePicker > Text {
+    background-color: '#org-eclipse-ui-workbench-GREEN_BACKGROUND'; 
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+}
+
+ScrolledFormText,
+FormText {
+    background-color: '#org-eclipse-ui-workbench-GREEN_BACKGROUND'; 
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+}
+
+Table,
+Tree,
+RegistryFilteredTree {
+    background-color: inherit;
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+}
+
+Hyperlink,
+ImageHyperlink {
+    background-color: inherit;
+    color: #006400;
+}
+
+ViewerPane,
+DrillDownComposite {
+    background-color: #F0FFF0;
+    color: #008000;
+}
+
+ProgressInfoItem,
+ProgressInfoItem > *,
+CompareViewerPane,
+CompareViewerPane > * {
+    background-color: inherit;
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+}
+
+ProgressIndicator {
+    background-color: #90EE90;
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+}
+
+DiscoveryItem,
+DiscoveryItem Label,
+DiscoveryItem Composite {
+    background-color: #E5F6E5;
+    color: #008000;
+}
+
+DiscoveryItem StyledText {
+    background-color: #E5F6E5;
+    color: #008000;
+}
+
+DiscoveryItem Link {
+    background-color: #E5F6E5;
+    color: #006400;
+}
+
+CatalogSwitcher,
+CatalogSwitcher > ScrolledComposite > Composite > Composite,
+CategoryItem {
+    background-color: '#org-eclipse-ui-workbench-GREEN_BACKGROUND'; 
+    color: #008000;
+}
+
+GradientCanvas,
+GradientCanvas > Label {
+    background-color: #90EE90;
+    color: #008000;
+}
+
+GradientCanvas {
+    background: #90EE90;
+}
+
+CategoryItem > GradientCanvas,
+CategoryItem > GradientCanvas > Label {
+    background-color: #F0FFF0;
+    color: #008000;
+}
+
+CategoryItem > GradientCanvas {
+    background: #F0FFF0;
+    background-image: #008000;
+}
+
+WebSite {
+    background-color: #F0FFF0;
+    color: #008000;
+}
+
+Form,
+FormHeading {
+    background-color: #90EE90;
+    color: #008000;
+}
+
+Form {
+    text-background-color: #90EE90;
+
+    tb-toggle-hover-color: #E5F6E5;
+    tb-toggle-color: #E5F6E5;
+    h-hover-full-color: #E5F6E5;
+    h-hover-light-color: #E5F6E5;
+    h-bottom-keyline-2-color: #E5F6E5;
+    h-bottom-keyline-1-color: #E5F6E5;
+
+    swt-background-mode: 'force';
+}
+
+Section {
+    background-color: #E5F6E5;
+    color: #008000;
+    background-color-titlebar: #E5F6E5;
+    background-color-gradient-titlebar: #E5F6E5;
+    border-color-titlebar: #E5F6E5;
+    swt-titlebar-color: #008000;
+    tb-toggle-hover-color: #008000;
+    tb-toggle-color: #008000;
+}
+
+Table,
+Tree {
+    swt-header-color: #008000;
+    swt-header-background-color: #90EE90;
+}
+
+Twistie {
+    color: #008000;
+}
+
+.MPartSashContainer {
+    background-color: '#org-eclipse-ui-workbench-GREEN_BACKGROUND'; 
+    color: #008000;
+}
+
+HeapStatus {
+    background-color: #E5F6E5;
+    color: #008000;
+}
+
+PageSiteComposite, PageSiteComposite > CImageLabel {
+    color: #008000;
+}
+
+PageSiteComposite > PropertyTable {
+    background-color: #F0FFF0;
+    color: #008000;
+}
+
+PageSiteComposite > PropertyTable:disabled {
+    background-color: #E5F6E5;
+    color: #008000;
+}
+
+Label#org-eclipse-ui-splash-progressText {
+    background-color: inherit; 
+    color: #008000; 
+}
+
+Label#org-eclipse-ui-buildid-text {
+    background-color: inherit; 
+}
+
+ProgressIndicator#org-eclipse-ui-splash-progressIndicator {
+    background-color: #90EE90;
+}
+
+Link {
+    swt-link-foreground-color: '#org-eclipse-ui-workbench-LINK_COLOR'
+}
+
+ExpandableComposite {
+    swt-titlebar-color: #008000;
+    tb-toggle-hover-color: #008000;
+    tb-toggle-color: #008000;
+}
+
+TabbedPropertyTitle > CLabel{
+    color: #008000;
+}
+
+TabbedPropertyTitle {
+    swt-backgroundGradientStart-color:  #90EE90;
+    swt-backgroundGradientEnd-color:    #90EE90;
+    swt-backgroundBottomKeyline1-color: #90EE90;
+    swt-backgroundBottomKeyline2-color: #90EE90;
+}
+
+TabbedPropertyList {
+    swt-tabNormalShadow-color   : '#org-eclipse-ui-workbench-INACTIVE_TAB_OUTLINE_COLOR';             
+    swt-tabDarkShadow-color     : '#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR'; 
+    swt-tabAreaBackground-color : '#org-eclipse-ui-workbench-GREEN_BACKGROUND';    
+    swt-tabBackground-color     : '#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_START';
+    color                       : '#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR'; 
+}
+
+Table {
+    /* 有焦点时的 TableItem 背景颜色 */
+    background-color: inherit;
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+    swt-header-color: #008000;
+    swt-header-background-color: #90EE90;
+}
+
+Table:unfocused {
+    /* 失去焦点时的 TableItem 背景颜色保持不变 */
+    background-color: inherit;
+    color: '#org-eclipse-ui-workbench-GREEN_FOREGROUND'; 
+    swt-header-color: #008000;
+    swt-header-background-color: #90EE90;
+}

@@ -14,7 +14,7 @@
          </property>
          <property
                name="applicationCSS"
-               value="platform:/plugin/antzou.template.application/css/default.css">
+               value="platform:/plugin/antzou.template.application/css/e4_green_win.css">
          </property>
          <property
                name="appName"
@@ -34,18 +34,17 @@
       </product>
    </extension>
    
-    <extension
-         point="org.eclipse.ui.preferencePages">
-      <page
-            class="com.antzou.application.handlers.GeneralPreferencePage"
-            id="com.example.e4.rcp.handlers.GeneralPreferencePage"
-            name="常规">
-      </page>
+    <!-- 定义主题 -->
+   <extension point="org.eclipse.e4.ui.css.swt.theme">
+      <theme
+            id="com.antzou.application.theme.green"
+            label="Green Theme"
+            basestylesheeturi="css/e4_green_win.css">
+      </theme>
+      <theme
+            id="com.antzou.application.theme.pink"
+            label="Pink Theme"
+            basestylesheeturi="css/e4_pink_win.css">
+      </theme>
    </extension>
-
-	<extension point="org.eclipse.core.runtime.preferences">
-	    <initializer 
-	        class="com.antzou.application.handlers.PreferenceInitializer"
-	        id="com.example.e4.rcp.preferenceInitializer"/>
-	</extension>
 </plugin>

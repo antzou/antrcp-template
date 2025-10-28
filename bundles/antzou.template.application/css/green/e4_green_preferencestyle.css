@@ -1,0 +1,79 @@
+/*******************************************************************************
+ * Copyright (c) 2014, 2015 Lars Vogel and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *     Lars Vogel <Lars.Vogel@gmail.com> - initial API and implementation
+ *     Andrea Guarinoni - intial color schema definition
+ *     Lars Vogel <Lars.Vogel@vogella.com> - Ongoing maintenance
+ *******************************************************************************/
+
+/* ############################## Eclipse UI properties ############################## */
+
+
+IEclipsePreferences#org-eclipse-ui-editors:org-eclipse-ui-themes { /* pseudo attribute added to allow contributions without replacing this node, see Bug 466075 */
+	preferences:
+		'AbstractTextEditor.Color.Background.SystemDefault=false'
+		'AbstractTextEditor.Color.SelectionForeground.SystemDefault=false'
+		'AbstractTextEditor.Color.SelectionBackground.SystemDefault=false'
+		'AbstractTextEditor.Color.Background=240,255,240', /* 编辑器背景（淡绿） */
+		'AbstractTextEditor.Color.Foreground.SystemDefault=false'
+		'AbstractTextEditor.Color.SelectionBackground=0,128,0', /* 选中背景（深绿） */
+		'AbstractTextEditor.Color.SelectionForeground=255,255,255'
+		'AbstractTextEditor.Color.Foreground=34,139,34',   /* 代码文字（绿） */
+		'AbstractTextEditor.Color.FindScope=144,238,144'
+		'asOccurencesIndicationColor=152,251,152'
+		'breakpointIndicationColor=0,128,0'
+		'currentIPColor=46,139,87'
+		'currentLineColor=152,251,152',                   /* 当前行高亮（浅绿） */
+		'deletionIndicationColor=144,238,144'
+		'filteredSearchResultIndicationColor=0,128,0'
+		'hyperlinkColor=0,100,0',                     /* 超链接（深绿） */
+		'hyperlinkColor.SystemDefault=false'
+		'infoIndicationColor=144,238,144'
+		'lineNumberColor=46,139,87'
+		'linked.slave.color=152,251,152'
+		'matchingTagIndicationColor=152,251,152'
+		'occurrenceIndicationColor=144,238,144'
+		'overrideIndicatorColor=0,128,0'
+		'printMarginColor=143,188,143'
+		'searchResultHighlighting=false'
+		'searchResultIndication=true'
+		'searchResultIndicationColor=152,251,152'
+		'searchResultTextStyle=BOX'
+		'secondaryIPColor=46,139,87'
+		'spellingIndicationColor=0,128,0'
+		'writeOccurrenceIndicationColor=144,238,144'
+		'org.eclipse.ui.editors.stickyLinesSeparatorColor=143,188,143'
+}
+
+IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-ui-themes { /* pseudo attribute added to allow contributions without replacing this node, see Bug 466075 */
+	preferences:
+		'ACTIVE_HYPERLINK_COLOR=0,128,0'
+		'CONFLICTING_COLOR=0,100,0'
+		'CONTENT_ASSIST_BACKGROUND_COLOR=224,255,224'
+		'CONTENT_ASSIST_FOREGROUND_COLOR=34,139,34'
+		'org.eclipse.ui.workbench.INFORMATION_BACKGROUND=144,238,144'
+		'org.eclipse.ui.workbench.INFORMATION_FOREGROUND=34,139,34'
+		'org.eclipse.ui.workbench.HOVER_BACKGROUND=224,255,224'
+		'org.eclipse.ui.workbench.HOVER_FOREGROUND=34,139,34'
+		'org.eclipse.ui.workbench.FORM_HEADING_ERROR_COLOR=0,100,0'
+		'org.eclipse.ui.workbench.FORM_HEADING_WARNING_COLOR=255,165,0'
+		'org.eclipse.ui.workbench.FORM_HEADING_INFO_COLOR=144,238,144'
+		'ERROR_COLOR=0,100,0'
+		'HYPERLINK_COLOR=0,128,0'
+		'INCOMING_COLOR=152,251,152'
+		'OUTGOING_COLOR=34,139,34'
+		'RESOLVED_COLOR=144,238,144'
+		'EDITION_COLOR=34,139,34'
+		'org.eclipse.search.ui.match.highlight=0,128,0'
+		'org.eclipse.ui.editors.rangeIndicatorColor=152,251,152'
+		'org.eclipse.jface.REVISION_NEWEST_COLOR=0,100,0'
+		'org.eclipse.jface.REVISION_OLDEST_COLOR=144,238,144'
+}    

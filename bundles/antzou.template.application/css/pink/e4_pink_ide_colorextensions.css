@@ -1,0 +1,235 @@
+/*******************************************************************************
+ * Copyright (c) 2024 [Your Name] and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *     [Your Name] <your.email@example.com> - initial API and implementation
+ *******************************************************************************/
+
+/* 主题扩展定义了一系列颜色常量，用于自定义Eclipse UI的外观 */
+ThemesExtension { color-definition:
+    '#org-eclipse-ui-workbench-PINK_BACKGROUND',          /* 主背景色，使用柔和的粉色 */
+    '#org-eclipse-ui-workbench-PINK_FOREGROUND',          /* 前景文本色，使用亮粉色 */
+    '#org-eclipse-ui-workbench-INACTIVE_UNSELECTED_TABS_COLOR_START',  /* 非活动未选中标签的渐变起始色 */
+    '#org-eclipse-ui-workbench-INACTIVE_UNSELECTED_TABS_COLOR_END',    /* 非活动未选中标签的渐变结束色 */
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_BG_START',    /* 非活动标签背景的渐变起始色 */
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_BG_END',      /* 非活动标签背景的渐变结束色 */
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_OUTER_KEYLINE_COLOR',  /* 非活动标签外部边框颜色 */
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_INNER_KEYLINE_COLOR',  /* 非活动标签内部边框颜色 */
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_OUTLINE_COLOR',  /* 非活动标签轮廓颜色 */
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_TEXT_COLOR',  /* 非活动标签文本颜色 */
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_UNSELECTED_TEXT_COLOR',  /* 非活动未选中标签文本颜色 */
+    '#org-eclipse-ui-workbench-INACTIVE_TAB_SELECTED_TEXT_COLOR',  /* 非活动选中标签文本颜色 */
+    '#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_START',  /* 活动未选中标签的渐变起始色 */
+    '#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_END',    /* 活动未选中标签的渐变结束色 */
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_BG_START',    /* 活动标签背景的渐变起始色 */
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END',      /* 活动标签背景的渐变结束色 */
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_OUTER_KEYLINE_COLOR',  /* 活动标签外部边框颜色 */
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_INNER_KEYLINE_COLOR',  /* 活动标签内部边框颜色 */
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_OUTLINE_COLOR',  /* 活动标签轮廓颜色 */
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR',  /* 活动标签文本颜色 */
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR',  /* 活动未选中标签文本颜色 */
+    '#org-eclipse-ui-workbench-ACTIVE_TAB_SELECTED_TEXT_COLOR',  /* 活动选中标签文本颜色 */
+    '#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_START',  /* 活动但无焦点标签背景的渐变起始色 */
+    '#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_END',    /* 活动但无焦点标签背景的渐变结束色 */
+    '#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_TEXT_COLOR',  /* 活动但无焦点标签文本颜色 */
+    '#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR',  /* 活动但无焦点选中标签文本颜色 */
+    '#org-eclipse-ui-workbench-LINK_COLOR';                    /* 链接文本颜色 */
+}
+
+/* 定义主背景色为柔和的粉色 */
+ColorDefinition#org-eclipse-ui-workbench-PINK_BACKGROUND {
+    color: #FFF0F5;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=PINK_BACKGROUND');
+}
+
+/* 定义前景文本色为亮粉色 */
+ColorDefinition#org-eclipse-ui-workbench-PINK_FOREGROUND {
+    color: #FF69B4;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=PINK_FOREGROUND');
+}
+
+/* 非活动未选中标签的渐变起始色 - 浅粉色 */
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_UNSELECTED_TABS_COLOR_START {
+    color: #FFE5F1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_UNSELECTED_TABS_COLOR_START');
+}
+
+/* 非活动未选中标签的渐变结束色 - 稍深的粉色 */
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_UNSELECTED_TABS_COLOR_END {
+    color: #FFD1E6;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_UNSELECTED_TABS_COLOR_END');
+}
+
+/* 非活动标签背景的渐变起始色 */
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_BG_START {
+    color: #FFE5F1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_BG_START');
+}
+
+/* 非活动标签背景的渐变结束色 */
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_BG_END {
+    color: #FFD1E6;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_BG_END');
+}
+
+/* 非活动标签外部边框颜色 */
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTER_KEYLINE_COLOR {
+    color: #FFE5F1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_OUTER_KEYLINE_COLOR');
+}
+
+/* 非活动标签内部边框颜色 */
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_INNER_KEYLINE_COLOR {
+    color: #FFE5F1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_INNER_KEYLINE_COLOR');
+}
+
+/* 非活动标签轮廓颜色 */
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTLINE_COLOR {
+    color: #FFE5F1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_OUTLINE_COLOR');
+}
+
+/* 非活动标签文本颜色 */
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_TEXT_COLOR {
+    color: #FF69B4;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_TEXT_COLOR');
+}
+
+/* 非活动未选中标签文本颜色 */
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_UNSELECTED_TEXT_COLOR {
+    color: #FF69B4;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_UNSELECTED_TEXT_COLOR');
+}
+
+/* 非活动选中标签文本颜色 - 使用更亮的粉色突出显示 */
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_SELECTED_TEXT_COLOR {
+    color: #FF1493;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=INACTIVE_TAB_SELECTED_TEXT_COLOR');
+}
+
+/* 活动未选中标签的渐变起始色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_START {
+    color: #FFD1E6;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_UNSELECTED_TABS_COLOR_START');
+}
+
+/* 活动未选中标签的渐变结束色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_END {
+    color: #FFB6C1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_UNSELECTED_TABS_COLOR_END');
+}
+
+/* 活动标签背景的渐变起始色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_BG_START {
+    color: #FFB6C1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_BG_START');
+}
+
+/* 活动标签背景的渐变结束色 
+ * 注释中提到的编辑/视图标题颜色为 #FF69B4，但实际使用的是 #FFB6C1 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END {
+    /** edit/view title color: #FF69B4; */
+    color: #FFB6C1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_BG_END');
+}
+
+/* 活动标签外部边框颜色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTER_KEYLINE_COLOR {
+    color: #FFB6C1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_OUTER_KEYLINE_COLOR');
+}
+
+/* 活动标签内部边框颜色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_INNER_KEYLINE_COLOR {
+    color: #FFB6C1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_INNER_KEYLINE_COLOR');
+}
+
+/* 活动标签轮廓颜色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTLINE_COLOR {
+    color: #FFB6C1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_OUTLINE_COLOR');
+}
+
+/* 活动标签文本颜色 - 使用白色提高对比度 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR {
+    color: #FFFFFF;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_TEXT_COLOR');
+}
+
+/* 活动未选中标签文本颜色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR {
+    color: #FFFFFF;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_UNSELECTED_TEXT_COLOR');
+}
+
+/* 活动选中标签文本颜色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_SELECTED_TEXT_COLOR {
+    color: #FFFFFF;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_TAB_SELECTED_TEXT_COLOR');
+}
+
+/* 活动但无焦点标签背景的渐变起始色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_START {
+    color: #FFB6C1;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_NOFOCUS_TAB_BG_START');
+}
+
+/* 活动但无焦点标签背景的渐变结束色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_END {
+    color: #FF69B4;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_NOFOCUS_TAB_BG_END');
+}
+
+/* 活动但无焦点标签文本颜色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_TEXT_COLOR {
+    color: #FFFFFF;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_NOFOCUS_TAB_TEXT_COLOR');
+}
+
+/* 活动但无焦点选中标签文本颜色 */
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR {
+    color: #FFFFFF;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR');
+}
+
+/* 链接文本颜色 - 使用亮粉色提高可见性 */
+ColorDefinition#org-eclipse-ui-workbench-LINK_COLOR {
+    color: #FF1493;
+    category: '#org-eclipse-ui-presentation-default';
+    label: url('platform:/plugin/org.eclipse.ui.themes?message=LINK_COLOR');
+}
