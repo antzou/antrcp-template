@@ -20,13 +20,13 @@ antrcp-template 是Eclipse RCP (Rich Client Platform) 项目的 Maven 多模块�
 
 ### Eclipse 生态系统重要资源
 
-| 名称 | 链接 | 说明 |
-|------|------|------|
-| Eclipse Orbit | https://download.eclipse.org/tools/orbit/downloads/drops | 为Eclipse生态系统提供经过"Eclipse化"的第三方库版本。Eclipse生态系统中不可或缺的基础设施，大大简化了第三方库的集成和使用。 |
-| SWTBot | https://download.eclipse.org/technology/swtbot/releases/latest | 基于 Eclipse SWT 的自动化测试框架，专门用于测试 Eclipse 插件、RCP 应用程序和 IDE 功能。 |
-| Eclipse Releases | https://download.eclipse.org/releases | Eclipse 官方发布的集成版本。提供了开发和使用 Eclipse 所需的核心平台和工具。 |
-| Maven Tycho | https://www.vogella.com/tutorials/EclipseTycho/article.html | 用于使用命令行构建 Eclipse 插件、OSGi bundle 和 Eclipse 应用程序 |
-| Nebula | https://eclipse.dev/nebula/ | 补充自定义小部件。Nebula 是不同的 Eclipse 项目和独立开发人员协作构建自定义 SWT 小部件和可重用的 UI 组件的地方，这些组件可用于使用 SWT 和 JFace 构建的 UI 应用程序。 |
+| 名称 | 说明 |
+|------|------|
+| [Eclipse Orbit](https://download.eclipse.org/tools/orbit/downloads/drops) | 为Eclipse生态系统提供经过"Eclipse化"的第三方库版本。Eclipse生态系统中不可或缺的基础设施，大大简化了第三方库的集成和使用。 |
+| [SWTBot](https://download.eclipse.org/technology/swtbot/releases/latest) | 基于 Eclipse SWT 的自动化测试框架，专门用于测试 Eclipse 插件、RCP 应用程序和 IDE 功能。 |
+| [Eclipse Releases](https://download.eclipse.org/releases) | Eclipse 官方发布的集成版本。提供了开发和使用 Eclipse 所需的核心平台和工具。 |
+| [Maven Tycho](https://www.vogella.com/tutorials/EclipseTycho/article.html) | 用于使用命令行构建 Eclipse 插件、OSGi bundle 和 Eclipse 应用程序 |
+| [Nebula](https://eclipse.dev/nebula/) | 补充自定义小部件。Nebula 是不同的 Eclipse 项目和独立开发人员协作构建自定义 SWT 小部件和可重用的 UI 组件的地方，这些组件可用于使用 SWT 和 JFace 构建的 UI 应用程序。 |
 
 ## 📦 模块详细说明
 
