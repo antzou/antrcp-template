@@ -10,6 +10,10 @@ import org.eclipse.e4.ui.workbench.lifecycle.PreSave;
 import org.eclipse.e4.ui.workbench.lifecycle.ProcessAdditions;
 import org.eclipse.e4.ui.workbench.lifecycle.ProcessRemovals;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.resource.LocalResourceManager;
+import org.eclipse.jface.resource.ResourceManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
@@ -17,25 +21,21 @@ import org.eclipse.swt.widgets.Shell;
 
 import jakarta.annotation.PreDestroy;
 
-/**
- * This is a stub implementation containing e4 LifeCycle annotated
- * methods.<br />
- * There is a corresponding entry in <em>plugin.xml</em> (under the
- * <em>org.eclipse.core.runtime.products' extension point</em>) that references
- * this class.
- **/
 public class E4LifeCycle {
 
-    private Image appImage32; // 只使用32像素图标
-    private boolean iconLoaded = false;
+    private ResourceManager resourceManager;
+    private Image appImage32;
+    private boolean initialized = false;
 
     @PostContextCreate
     void postContextCreate(IEclipseContext context) {
-        // 加载32像素应用图标
-        loadApplicationIcon();
-        
-        // 设置全局Shell图标监听
-        setupGlobalShellIcons();
+        // 初始化资源管理器
+        Display.getDefault().asyncExec(() -> {
+            resourceManager = new LocalResourceManager(JFaceResources.getResources());
+            loadApplicationIcon();
+            setupGlobalShellIcons();
+            initialized = true;
+        });
     }
 
     @PreSave
@@ -44,6 +44,8 @@ public class E4LifeCycle {
 
     @ProcessAdditions
     void processAdditions(IEclipseContext workbenchContext) {
+        if (!initialized) return;
+        
         EModelService modelService = workbenchContext.get(EModelService.class);
         MApplication application = workbenchContext.get(MApplication.class);
 
@@ -56,7 +58,6 @@ public class E4LifeCycle {
                 Shell shell = (Shell) mainWindow.getWidget();
                 if (shell != null && !shell.isDisposed()) {
                     shell.setMaximized(true);
-                    // 确保主窗口设置了图标
                     setShellIcon(shell);
                 }
             });
@@ -69,22 +70,31 @@ public class E4LifeCycle {
     
     @PreDestroy
     public void dispose() {
-        // 清理图标资源
-        disposeIcon();
+        if (resourceManager != null) {
+            resourceManager.dispose();
+        }
+        initialized = false;
     }
     
     /**
-     * 加载32像素应用程序图标
+     * 使用 ResourceManager 安全加载图标
      */
-    private void loadApplicationIcon() {
-        if (iconLoaded) return;
+    @SuppressWarnings("deprecation")
+	private void loadApplicationIcon() {
+        if (resourceManager == null) return;
         
-        Display display = Display.getDefault();
         try {
-            appImage32 = new Image(display, getClass().getResourceAsStream("/icons/app32.png"));
-            iconLoaded = true;
+            ImageDescriptor descriptor = ImageDescriptor.createFromFile(
+                getClass(), "/icons/app32.png");
             
+            if (descriptor != null) {
+                appImage32 = resourceManager.createImage(descriptor);
+                System.out.println("应用图标加载成功");
+            } else {
+                System.err.println("无法创建图像描述符");
+            }
         } catch (Exception e) {
+            System.err.println("加载应用图标失败: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -93,26 +103,28 @@ public class E4LifeCycle {
      * 设置全局Shell图标监听
      */
     private void setupGlobalShellIcons() {
-        if (!iconLoaded) return;
+        if (appImage32 == null) return;
         
         Display display = Display.getDefault();
+        if (display == null || display.isDisposed()) {
+            return;
+        }
         
-        // 监听所有新创建的Shell并设置图标
-        display.addFilter(SWT.Show, event -> {
-            if (event.widget instanceof Shell) {
-                Shell shell = (Shell) event.widget;
-                // 延迟设置，确保Shell完全创建
-                display.asyncExec(() -> setShellIcon(shell));
-            }
-        });
-        
-        // 同时为当前已存在的Shell设置图标（如果有的话）
+        // 为当前已存在的Shell设置图标
         display.asyncExec(() -> {
             Shell[] existingShells = display.getShells();
             for (Shell shell : existingShells) {
                 if (!shell.isDisposed()) {
                     setShellIcon(shell);
                 }
+            }
+        });
+        
+        // 监听新创建的Shell
+        display.addListener(SWT.Show, event -> {
+            if (event.widget instanceof Shell) {
+                Shell shell = (Shell) event.widget;
+                display.asyncExec(() -> setShellIcon(shell));
             }
         });
         
@@ -123,26 +135,14 @@ public class E4LifeCycle {
      * 为Shell设置应用图标
      */
     private void setShellIcon(Shell shell) {
-        if (shell == null || shell.isDisposed() || !iconLoaded || appImage32 == null) {
+        if (shell == null || shell.isDisposed() || appImage32 == null || appImage32.isDisposed()) {
             return;
         }
         
         try {
-            // 使用setImage方法设置单个图标
             shell.setImage(appImage32);
         } catch (Exception e) {
             System.err.println("设置Shell图标失败: " + e.getMessage());
         }
-    }
-    
-    /**
-     * 清理图标资源
-     */
-    private void disposeIcon() {
-        if (appImage32 != null && !appImage32.isDisposed()) {
-            appImage32.dispose();
-            appImage32 = null;
-        }
-        iconLoaded = false;
     }
 }
