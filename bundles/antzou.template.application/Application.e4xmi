@@ -150,7 +150,13 @@
 		<trimBars xmi:id="status_bar"
 		    elementId="antzou.template.application.statusbar"
 		    side="Bottom">
-		    
+		    <!-- 导航状态显示 -->
+		    <children xsi:type="menu:ToolControl"
+		        xmi:id="navigation_status_control"
+		        elementId="com.antzou.application.statusbar.navigation"
+		        contributionURI="bundleclass://antzou.template.application/com.antzou.application.controls.StatusBarNavigationControl"
+		        visible="true">
+		    </children>
 		    <!-- 使用自定义填充控件 -->
 		    <children xsi:type="menu:ToolControl"
 		        xmi:id="statusbar_filler"

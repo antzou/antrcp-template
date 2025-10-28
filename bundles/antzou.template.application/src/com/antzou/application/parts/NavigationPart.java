@@ -2,6 +2,8 @@ package com.antzou.application.parts;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.inject.Inject;
+
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.di.UISynchronize;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
@@ -10,9 +12,11 @@ import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
@@ -61,7 +65,8 @@ public class NavigationPart {
     @Inject private EPartService partService;
     @Inject private EModelService modelService;
     @Inject private UISynchronize sync;
-    @Inject private MWindow window;  // 直接注入当前窗口
+    @Inject private MWindow window;
+    @Inject private IEventBroker eventBroker;
     
     @PostConstruct
     public void createControls(Composite parent) {
@@ -70,8 +75,22 @@ public class NavigationPart {
         TreeViewer treeViewer = new TreeViewer(parent, SWT.BORDER | SWT.SINGLE);
         treeViewer.setContentProvider(new NavContentProvider());
         treeViewer.setLabelProvider(new NavLabelProvider());
-        treeViewer.setInput(new Object()); // 触发内容提供器
+        treeViewer.setInput(new Object());
         
+        // 添加独立的点击监听器 - 用于状态栏同步
+        treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+            @Override
+            public void selectionChanged(SelectionChangedEvent event) {
+                IStructuredSelection selection = (IStructuredSelection)event.getSelection();
+                if (selection.isEmpty()) return;
+                
+                NavItem item = (NavItem)selection.getFirstElement();
+                // 立即同步到状态栏
+                updateStatusBar(item.getName());
+            }
+        });
+        
+        // 原有的双击监听器保持不变 - 用于打开部件
         treeViewer.addDoubleClickListener(new IDoubleClickListener() {
             @Override
             public void doubleClick(DoubleClickEvent event) {
@@ -79,16 +98,32 @@ public class NavigationPart {
                 if (selection.isEmpty()) return;
                 
                 NavItem item = (NavItem)selection.getFirstElement();
-                switchToPart(item.getPartId());
+                switchToPart(item.getPartId(), item.getName());
             }
         });
     }
     
-    private void switchToPart(String partId) {
+    /**
+     * 独立的点击事件处理 - 只更新状态栏
+     */
+    private void updateStatusBar(String itemName) {
+        if (eventBroker != null) {
+            eventBroker.post("NAVIGATION/STATUS", "选中: " + itemName);
+        }
+    }
+    
+    /**
+     * 双击事件处理 - 打开对应的部件
+     */
+    private void switchToPart(String partId, String partName) {
+        // 更新状态栏显示当前操作
+        if (eventBroker != null) {
+            eventBroker.post("NAVIGATION/STATUS", "正在打开: " + partName);
+        }
+        
         sync.asyncExec(() -> {
             MPart part = partService.findPart(partId);
             if (part == null) {
-                // 如果部件不存在则创建
                 part = partService.createPart(partId);
                 MPartStack stack = (MPartStack)modelService.find(
                     "antzou.template.application.right.editorstack", window);
@@ -97,6 +132,11 @@ public class NavigationPart {
                 }
             }
             partService.activate(part);
+            
+            // 激活后再次更新状态栏
+            if (eventBroker != null) {
+                eventBroker.post("NAVIGATION/STATUS", "当前: " + partName);
+            }
         });
     }
 }
