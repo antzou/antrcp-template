@@ -20,6 +20,17 @@
                name="appName"
                value="antrcp-template">
          </property>
+         
+        <!-- 添加Splash相关配置 -->
+	    <property name="startupProgressRect" value="30,160,340,8"/>
+		<property name="startupMessageRect" value="30,140,340,16"/>
+	    <property name="startupForegroundColor" value="2C3E50"/>
+		<property name="startupMessageColor" value="2C3E50"/>
+	    <!-- 指定Splash图片 -->
+	    <property
+	          name="splashLocation"
+	          value="platform:/plugin/antzou.template.application/splash.bmp"/>
+         
       </product>
    </extension>
    

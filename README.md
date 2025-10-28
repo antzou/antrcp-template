@@ -1,5 +1,5 @@
 <p align="center">
-	<img alt="logo" src="splash.bmp" width="400" height="200">
+	<img alt="logo" src="bundles/antzou.template.application/splash.bmp" width="400" height="200">
 </p>
 <h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">antrcp-template</h1>
 <h4 align="center">Maven Tych构建Eclipse RCP应用的模板，让Eclipse应用程序构建变得简单、优雅！</h4>
