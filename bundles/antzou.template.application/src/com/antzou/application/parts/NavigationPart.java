@@ -91,7 +91,7 @@ public class NavigationPart {
                 // 如果部件不存在则创建
                 part = partService.createPart(partId);
                 MPartStack stack = (MPartStack)modelService.find(
-                    "com.example.e4.rcp.right.editorstack", window);
+                    "antzou.template.application.right.editorstack", window);
                 if (stack != null) {
                     stack.getChildren().add(part);
                 }
