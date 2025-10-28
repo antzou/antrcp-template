@@ -11,5 +11,6 @@ public class OpenAboutHandler {
 //        partService.showPart("com.example.e4.part.about", PartState.ACTIVATE);
     	
     	new AboutDialog().createComposite(shell);
+    	
     }
 }
