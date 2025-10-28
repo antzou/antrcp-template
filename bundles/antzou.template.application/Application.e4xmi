@@ -74,23 +74,6 @@
 		<mainMenu xmi:id="main_menu"
 			elementId="org.eclipse.ui.main.menu">
 			<children xsi:type="menu:Menu"
-				xmi:id="file_menu" elementId="file" label="File">
-				<children xsi:type="menu:HandledMenuItem"
-					xmi:id="file_open_item"
-					elementId="com.antzou.application.handleditem.file.open" label="Open"
-					iconURI="platform:/plugin/antzou.template.application/icons/open_in_app.png"
-					command="cmd_open" />
-				<children xsi:type="menu:HandledMenuItem"
-					xmi:id="file_save_item"
-					elementId="com.antzou.application.handleditem.save" label="Save"
-					iconURI="platform:/plugin/antzou.template.application/icons/save_edit.png"
-					command="cmd_save" />
-				<children xsi:type="menu:HandledMenuItem"
-					xmi:id="file_quit_item"
-					elementId="com.antzou.application.handleditem.quit" label="Quit"
-					command="cmd_quit" />
-			</children>
-			<children xsi:type="menu:Menu"
 			    xmi:id="window_menu"
 			    elementId="window.menu"
 			    label="Window">
@@ -116,6 +99,11 @@
 			            label="Toggle Full Screen"
 			            command="cmd_toggle_fullscreen"/>
 			    </children>
+			
+				<children xsi:type="menu:HandledMenuItem"
+					xmi:id="file_quit_item"
+					elementId="com.antzou.application.handleditem.quit" label="Quit"
+					command="cmd_quit" />
 			</children>
 			<children xsi:type="menu:Menu"
 			    xmi:id="help_menu" elementId="help" label="Help">
@@ -133,11 +121,6 @@
 			<children xsi:type="menu:ToolBar"
 				xmi:id="toolbar"
 				elementId="org.eclipse.ui.main.toolbar">
-				<children xsi:type="menu:HandledToolItem"
-					xmi:id="toolbar_save_item"
-					elementId="com.antzou.application.handleditem.trimbar.top.save"
-					iconURI="platform:/plugin/antzou.template.application/icons/save_edit.png"
-					command="cmd_save" />
 				<children xsi:type="menu:HandledToolItem"
 					xmi:id="toolbar_open_item"
 					elementId="com.antzou.application.handleditem.trimbar.top.open"
@@ -199,11 +182,7 @@
 	<handlers xmi:id="handler_open"
 		elementId="com.antzou.application.handler.openCommand"
 		contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.OpenHandler"
-		command="cmd_open"></handlers>
-	<handlers xmi:id="handler_save"
-		elementId="com.antzou.application.handler.saveCommand"
-		contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.SaveHandler"
-		command="cmd_save" />
+		command="cmd_open"/>
 	
 	<handlers xmi:id="handler_hide_toolbar"
 	    elementId="com.antzou.application.handler.hidetoolbar"
