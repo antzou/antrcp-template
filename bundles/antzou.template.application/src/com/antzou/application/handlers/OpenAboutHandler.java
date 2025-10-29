@@ -6,6 +6,6 @@ import org.eclipse.swt.widgets.Shell;
 public class OpenAboutHandler {
     @Execute
     public void execute(Shell shell) {
-    	new AboutDialog().createComposite(shell);
+    	new AboutDialog(shell).open();
     }
 }
