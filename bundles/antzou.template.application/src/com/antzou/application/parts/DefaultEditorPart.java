@@ -15,8 +15,5 @@ public class DefaultEditorPart {
         label.setLayoutData(
                 new GridData(SWT.FILL, SWT.FILL, true, true)); // 关键：填充可用空间
         label.setText("Welcome to Eclipse RCP Editor");
-        
-        // 可扩展区域：添加文本框、按钮等控件
-        // Text text = new Text(parent, SWT.BORDER);
     }
 }

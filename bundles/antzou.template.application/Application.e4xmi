@@ -97,8 +97,13 @@
 			    </children>
 			
 				<children xsi:type="menu:HandledMenuItem"
-					xmi:id="file_quit_item"
-					elementId="com.antzou.application.handleditem.quit" label="Quit"
+					xmi:id="appearance_preference"
+					elementId="window.appearance.preference" label="Preference"
+					command="cmd_preference" />
+			
+				<children xsi:type="menu:HandledMenuItem"
+					xmi:id="appearance_quit"
+					elementId="window.appearance.quit" label="Quit"
 					command="cmd_quit" />
 			</children>
 			<children xsi:type="menu:Menu"
@@ -168,13 +173,17 @@
 	<!-- 在处理器部分 -->
 	<handlers xmi:id="handler_about"
     elementId="com.antzou.application.aboutHandler"
-    contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.OpenAboutHandler"
+    contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.AboutHandler"
     command="cmd_about"/>
 
 	<handlers xmi:id="handler_quit"
 		elementId="com.antzou.application.handler.quitCommand"
 		contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.QuitHandler"
 		command="cmd_quit" />
+	<handlers xmi:id="handler_preference"
+		elementId="com.antzou.application.handler.preferenceCommand"
+		contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.PreferenceHandler"
+		command="cmd_preference" />
 		
 	<handlers xmi:id="handler_project"
 		elementId="com.antzou.application.handler.projectCommand"
@@ -211,11 +220,12 @@
 			elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs" />
 	</rootContext>
 
+	<commands xmi:id="cmd_preference"
+		elementId="com.antzou.application.window.preference" commandName="preferenceCommand" />
 	<commands xmi:id="cmd_quit"
 		elementId="org.eclipse.ui.file.exit" commandName="quitCommand" />
 	<commands xmi:id="cmd_about"
-	    elementId="org.eclipse.ui.help.aboutAction"
-	    commandName="About"/>
+	    elementId="org.eclipse.ui.help.aboutAction" commandName="About"/>
 	    
 	<!-- 网页打开命令 -->
 	<commands xmi:id="cmd_project"
