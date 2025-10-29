@@ -42,7 +42,8 @@ antrcp-template 是Eclipse RCP (Rich Client Platform) 项目的 Maven 多模块�
 
 ---
 ## 其他说明
-- [效果展示](Show.md)
+- [视频效果](https://zhuanlan.zhihu.com/p/1966948250415247638)
+- [图片效果](Show.md)
 - [功能列表](FunctionList.md)
 
 ---
