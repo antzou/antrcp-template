@@ -38,14 +38,12 @@
 					xmi:id="default_editor_part"
 					elementId="com.antzou.application.right.editorpart"
 					contributionURI="bundleclass://antzou.template.application/com.antzou.application.parts.DefaultEditorPart"
-					iconURI="platform:/plugin/antzou.template.application/icons/save_edit.png"
 					label="Welcome" />
 					
 				<children xsi:type="basic:Part"
 				    xmi:id="input_part"
 				    elementId="com.antzou.application.parts.input"
 				    contributionURI="bundleclass://antzou.template.application/com.antzou.application.parts.InputPart"
-				    iconURI="platform:/plugin/antzou.template.application/icons/save_edit.png"
 				    label="信息录入"
 				    closeable="true" 
 				    toBeRendered="false"/>
@@ -54,7 +52,6 @@
 				    xmi:id="query_part"
 				    elementId="com.antzou.application.parts.query"
 				    contributionURI="bundleclass://antzou.template.application/com.antzou.application.parts.QueryPart"
-				    iconURI="platform:/plugin/antzou.template.application/icons/save_edit.png"
 				    label="信息查询"
 				    closeable="true" 
 				    toBeRendered="false"/>
@@ -63,7 +60,6 @@
 				    xmi:id="edit_part"
 				    elementId="com.antzou.application.parts.edit"
 				    contributionURI="bundleclass://antzou.template.application/com.antzou.application.parts.EditPart"
-				    iconURI="platform:/plugin/antzou.template.application/icons/save_edit.png"
 				    label="信息修改"
 				    closeable="true" 
 				    toBeRendered="false"/>
@@ -122,10 +118,20 @@
 				xmi:id="toolbar"
 				elementId="org.eclipse.ui.main.toolbar">
 				<children xsi:type="menu:HandledToolItem"
-					xmi:id="toolbar_open_item"
-					elementId="com.antzou.application.handleditem.trimbar.top.open"
-					iconURI="platform:/plugin/antzou.template.application/icons/open_in_app.png"
-					command="cmd_open" />
+				xmi:id="toolbar_project_item"
+				elementId="com.antzou.application.handleditem.trimbar.top.project"
+				iconURI="platform:/plugin/antzou.template.application/icons/sys_project_home.png"
+				command="cmd_project" />
+			<children xsi:type="menu:HandledToolItem"
+				xmi:id="toolbar_baidu_item"
+				elementId="com.antzou.application.handleditem.trimbar.top.baidu"
+				iconURI="platform:/plugin/antzou.template.application/icons/sys_baidu.png"
+				command="cmd_baidu" />
+			<children xsi:type="menu:HandledToolItem"
+				xmi:id="toolbar_deepseek_item"
+				elementId="com.antzou.application.handleditem.trimbar.top.deepseek"
+				iconURI="platform:/plugin/antzou.template.application/icons/sys_deepseek3.png"
+				command="cmd_deepseek" />
 			</children>
 		</trimBars>
 		
@@ -158,16 +164,6 @@
 		    
 		</trimBars>
 	</children>
-
-	<!-- 在命令部分添加 -->
-	<commands xmi:id="cmd_preferences"
-	    elementId="org.eclipse.ui.window.preferences"
-	    commandName="Preferences"/>
-	
-	<!-- 在命令部分 -->
-	<commands xmi:id="cmd_about"
-	    elementId="org.eclipse.ui.help.aboutAction"
-	    commandName="About"/>
 	
 	<!-- 在处理器部分 -->
 	<handlers xmi:id="handler_about"
@@ -179,11 +175,20 @@
 		elementId="com.antzou.application.handler.quitCommand"
 		contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.QuitHandler"
 		command="cmd_quit" />
-	<handlers xmi:id="handler_open"
-		elementId="com.antzou.application.handler.openCommand"
-		contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.OpenHandler"
-		command="cmd_open"/>
-	
+		
+	<handlers xmi:id="handler_project"
+		elementId="com.antzou.application.handler.projectCommand"
+		contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.ProjectHandler"
+		command="cmd_project"/>
+	<handlers xmi:id="handler_baidu"
+		elementId="com.antzou.application.handler.baiduCommand"
+		contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.BaiduHandler"
+		command="cmd_baidu"/>
+	<handlers xmi:id="handler_deepseek"
+		elementId="com.antzou.application.handler.deepseekCommand"
+		contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.DeepSeekHandler"
+		command="cmd_deepseek"/>
+        
 	<handlers xmi:id="handler_hide_toolbar"
 	    elementId="com.antzou.application.handler.hidetoolbar"
 	    contributionURI="bundleclass://antzou.template.application/com.antzou.application.handlers.ToolbarVisibilityHandler"
@@ -208,10 +213,21 @@
 
 	<commands xmi:id="cmd_quit"
 		elementId="org.eclipse.ui.file.exit" commandName="quitCommand" />
-	<commands xmi:id="cmd_open"
-		elementId="org.eclipse.ui.file.open" commandName="openCommand" />
-	<commands xmi:id="cmd_save"
-		elementId="org.eclipse.ui.file.save" commandName="saveCommand" />
+	<commands xmi:id="cmd_about"
+	    elementId="org.eclipse.ui.help.aboutAction"
+	    commandName="About"/>
+	    
+	<!-- 网页打开命令 -->
+	<commands xmi:id="cmd_project"
+		elementId="com.antzou.application.web.project"
+		commandName="项目主页"/>
+	<commands xmi:id="cmd_baidu"
+		elementId="com.antzou.application.web.baidu"
+		commandName="百度"/>
+	<commands xmi:id="cmd_deepseek"
+		elementId="com.antzou.application.web.deepseek"
+		commandName="DeepSeek"/>
+	    
 	<commands xmi:id="cmd_hide_toolbar"
 	    elementId="org.eclipse.ui.window.hide.toolbar"
 	    commandName="Hide Toolbar"/>
