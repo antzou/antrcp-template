@@ -40,6 +40,10 @@ antrcp-template 是Eclipse RCP (Rich Client Platform) 项目的 Maven 多模块�
 | **releng 模块** | Release Engineering（发布工程） | • 产品构建配置<br>• 目标平台定义<br>• 产品配置文件<br>• 更新站点配置<br>• 打包和分发配置 | 负责整个产品的最终组装和发布 |
 | **tests 模块** | 测试代码 | • 单元测试<br>• 集成测试<br>• UI 测试（如 SWTBot 测试）<br>• 具体位置：`tests/antzou.template.tests` | 包含具体的测试项目 |
 
+---
+## 其他说明
+- [效果展示](Show.md)
+- [功能列表](FunctionList.md)
 
 ---
 
