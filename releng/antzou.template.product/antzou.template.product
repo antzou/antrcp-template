@@ -17,7 +17,7 @@
 
    <splash
       location="antzou.template.application" />
-   <launcher>
+   <launcher name="antrcp-template">
       <win useIco="false">
          <bmp/>
       </win>
