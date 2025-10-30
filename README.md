@@ -67,7 +67,12 @@ mvn verify
 mvn clean verify -Dskip.ui-tests=false
 ```
 
+### 代码托管
+- Gitee：[https://gitee.com/antzou/antrcp-template](https://gitee.com/antzou/antrcp-template)
+- GitHub：[https://github.com/antzou/antrcp-template](https://github.com/antzou/antrcp-template)
+
 ## e3实践
 - [[ antrcp-assistant ]](https://gitee.com/antzou/antrcp-assistant)：办公效率工具集
 - [[ antrcp-crm ]](https://gitee.com/antzou/antrcp-crm)：客户关系管家
+
 
