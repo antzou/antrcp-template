@@ -42,9 +42,6 @@ public class ThemeManager {
         for (ITheme theme : engine.getThemes()) {
             themes.add(new ThemeInfo(theme.getId(), theme.getLabel()));
         }
-        
-        // 按名称排序
-        themes.sort(Comparator.comparing(ThemeInfo::getName));
         return themes;
     }
     
@@ -58,7 +55,7 @@ public class ThemeManager {
             return activeTheme;
         }
         
-        String savedTheme = getPreference(THEME_PREFERENCE_KEY, "");
+        String savedTheme = getPreference(THEME_PREFERENCE_KEY, "com.antzou.application.theme.classic");
         return savedTheme;
     }
     

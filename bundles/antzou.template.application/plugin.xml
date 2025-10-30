@@ -32,6 +32,16 @@
    
     <!-- 定义主题 -->
    <extension point="org.eclipse.e4.ui.css.swt.theme">
+   	  <theme
+            id="com.antzou.application.theme.default"
+            label="Default Theme"
+            basestylesheeturi="css/e4_default_win.css">
+      </theme>
+      <theme
+            id="com.antzou.application.theme.classic"
+            label="Classic Theme"
+            basestylesheeturi="css/e4_classic.css">
+      </theme>
       <theme
             id="com.antzou.application.theme.green"
             label="Green Theme"

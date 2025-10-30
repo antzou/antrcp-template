@@ -40,30 +40,19 @@ public class PreferenceDialog extends BaseDialog {
     }
     
     private void createThemeSection(Composite parent) {
-        System.out.println("创建主题选择区域");
-        
-        // 主题选择标签
         Label themeLabel = new Label(parent, SWT.NONE);
         themeLabel.setText("主题:");
         
-        // 主题选择下拉框
         themeCombo = new Combo(parent, SWT.READ_ONLY);
         themeCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
         
-        // 填充主题列表
         List<ThemeInfo> themes = themeManager.getAvailableThemes();
-        System.out.println("填充主题列表，数量: " + themes.size());
-        themeCombo.add("");
-        themeCombo.setData("", "");
         for (ThemeInfo theme : themes) {
             themeCombo.add(theme.getName());
             themeCombo.setData(theme.getName(), theme.getId());
         }
         
-        // 设置当前选中主题
         String currentTheme = themeManager.getCurrentTheme();
-        System.out.println("当前主题: " + currentTheme);
-        
         for (ThemeInfo theme : themes) {
             if (theme.getId().equals(currentTheme)) {
                 themeCombo.setText(theme.getName());
@@ -72,7 +61,6 @@ public class PreferenceDialog extends BaseDialog {
             }
         }
         
-        // 监听主题选择变化
         themeCombo.addListener(SWT.Selection, event -> {
             String themeName = themeCombo.getText();
             String themeId = (String) themeCombo.getData(themeName);
@@ -81,7 +69,6 @@ public class PreferenceDialog extends BaseDialog {
             }
         });
         
-        // 添加分隔线
         Label separator = new Label(parent, SWT.SEPARATOR | SWT.HORIZONTAL);
         GridData sepData = new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1);
         sepData.heightHint = 10;
@@ -90,19 +77,16 @@ public class PreferenceDialog extends BaseDialog {
     
     @Override
     protected void createButtonsForButtonBar(Composite parent) {
-        // 创建应用按钮（自定义，不是标准的OK按钮）
         Button applyButton = createButton(parent, SWT.PUSH, "应用", false);
         applyButton.addListener(SWT.Selection, event -> {
             applyTheme();
         });
         
-        // 创建关闭按钮
         Button closeButton = createButton(parent, SWT.PUSH, "关闭", true);
         closeButton.addListener(SWT.Selection, event -> {
             close();
         });
         
-        // 设置焦点到关闭按钮
         closeButton.setFocus();
     }
     
@@ -118,10 +102,7 @@ public class PreferenceDialog extends BaseDialog {
             return;
     	}
     	
-        System.out.println("准备切换主题: " + selectedTheme);
         themeManager.setTheme(selectedTheme);
-        // 可以在这里添加成功提示
-        
         MessageBox messageBox = new MessageBox(getShell(), SWT.ICON_WARNING | SWT.OK);
         messageBox.setText("成功");
         messageBox.setMessage("主题切换成功");
