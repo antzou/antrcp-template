@@ -11,10 +11,13 @@ import org.eclipse.e4.ui.workbench.lifecycle.PreSave;
 import org.eclipse.e4.ui.workbench.lifecycle.ProcessAdditions;
 import org.eclipse.e4.ui.workbench.lifecycle.ProcessRemovals;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
+import com.antzou.application.common.IconLoader;
 import com.antzou.application.theme.ThemeManager;
+import com.antzou.application.tray.TrayManager;
 
 public class E4LifeCycle {
 
@@ -23,17 +26,30 @@ public class E4LifeCycle {
         // 手动创建并注册 ThemeManager
         ThemeManager themeManager = ContextInjectionFactory.make(ThemeManager.class, context);
         context.set(ThemeManager.class, themeManager);
-        System.out.println("ThemeManager 已手动创建并注册: " + (themeManager != null));
+        
+        // 创建并注册 TrayManager
+        TrayManager trayManager = ContextInjectionFactory.make(TrayManager.class, context);
+        context.set(TrayManager.class, trayManager);
     }
     
     @ProcessAdditions
     void processAdditions(IEclipseContext workbenchContext) {
         // 原有的窗口最大化逻辑
         setupWindowMaximization(workbenchContext);
+        
+        // 初始化系统托盘
+        setupSystemTray(workbenchContext);
     }
 
     @PreSave
     void preSave(IEclipseContext workbenchContext) {
+        // 清理托盘资源
+        TrayManager trayManager = workbenchContext.get(TrayManager.class);
+        if (trayManager != null) {
+            trayManager.disposeTray();
+        }
+        
+        IconLoader.disposeInstance();
     }
 
     @ProcessRemovals
@@ -56,6 +72,36 @@ public class E4LifeCycle {
                 Shell shell = (Shell) mainWindow.getWidget();
                 if (shell != null && !shell.isDisposed()) {
                     shell.setMaximized(true);
+                }
+            });
+        }
+    }
+    
+    /**
+     * 设置系统托盘
+     */
+    private void setupSystemTray(IEclipseContext workbenchContext) {
+        EModelService modelService = workbenchContext.get(EModelService.class);
+        MApplication application = workbenchContext.get(MApplication.class);
+        TrayManager trayManager = workbenchContext.get(TrayManager.class);
+
+        List<MWindow> windows = modelService.findElements(application, null, MWindow.class, null);
+
+        if (!windows.isEmpty() && trayManager != null) {
+            MWindow mainWindow = windows.get(0);
+
+            Display.getDefault().asyncExec(() -> {
+                Shell shell = (Shell) mainWindow.getWidget();
+                if (shell != null && !shell.isDisposed()) {
+                    // 创建系统托盘
+                    trayManager.createTray(shell);
+                    
+                    // 监听窗口最小化事件
+                    shell.addListener(SWT.Iconify, event -> {
+                        if (shell.getMinimized()) {
+                            shell.setVisible(false);
+                        }
+                    });
                 }
             });
         }
